@@ -1,0 +1,14 @@
+.hide-element {
+    visibility: hidden;
+    /*Не отбражать элементы*/
+}
+
+.hover:hover {
+    background: aquamarine;
+    /*Изменение цвета*/
+}
+
+.pointer {
+    cursor: pointer;
+    /*Изменение типа курсора*/
+}
