@@ -14,7 +14,7 @@
     <div class="search">
         <form class="row" id="search-form">
             <div class="input-field col s4 offset-s5">
-                <input id="search" name="searchName" placeholder="search ...">
+                <input class="validate" minlength="5" id="search" name="searchName" placeholder="search ...">
                 <label hidden for="search">Search</label>
             </div>
             <div class="input-field col s3">
@@ -36,17 +36,17 @@
             <div class="row">
 
                 <div class="input-field col s3">
-                    <input id="first-name" type="text" class="validate" name="firstName">
+                    <input id="first-name" type="text" class="validate" name="firstName" placeholder="name">
                     <label for="first-name">First name</label>
                 </div>
 
                 <div class="input-field col s3">
-                    <input id="last-name" type="text" class="validate" name="lastName">
+                    <input id="last-name" type="text" class="validate" name="lastName" placeholder="last name">
                     <label for="last-name">Last name</label>
                 </div>
 
                 <div class="input-field col s2">
-                    <input id="age" type="number" class="validate" name="age">
+                    <input id="age" type="number" class="validate" min="0" max="120" name="age" placeholder="0">
                     <label for="age">Age</label>
                 </div>
 
@@ -56,11 +56,11 @@
                         <i class="material-icons right">send</i>
                     </a>
 
-                    <a class="btn waves-effect waves-light" data-action="save">Save
+                    <a class="btn waves-effect waves-light hide-element" data-action="save">Save
                         <i class="material-icons right">edit</i>
                     </a>
 
-                    <a class="btn waves-effect waves-light" data-action="cancel">Cancel
+                    <a class="btn waves-effect waves-light hide-element" data-action="cancel">Cancel
                         <i class="material-icons right">cancel</i>
                     </a>
 
@@ -72,9 +72,7 @@
 
 
     <ul class="collection with-header" id="contact-wrapper">
-<!--        Форма котактов-->
         <li class="collection-header"><h4>Contacts</h4></li>
-
     </ul>
 
 </div>
@@ -83,16 +81,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 <li class="collection-item hide-element hover" id="contact-template">
-    <a href="#!">
+    <a href="#!" data-action="toggle">
         <span data-id="name">Name</span>
         <span data-id="lastname">Last name</span>
     </a>
 
     <a href="#!" class="secondary-content" data-action="edit"><i class="material-icons">edit</i></a>
     <a href="#!" class="secondary-content" data-action="remove"><i class="material-icons">delete</i></a>
+
 </li>
 
-<div class="hide-element" id="contact-details-template">
+<div class="contact-item-details hide-element" id="contact-details-template">
     <div class="row">
         <div class="col s6">
             Name:
